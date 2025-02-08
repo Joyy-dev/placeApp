@@ -8,7 +8,8 @@ class PlacesListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
         title: const Text('Places'),
         actions: [
           IconButton(
