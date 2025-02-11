@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:placeapp/providers/great_places.dart';
 import 'package:placeapp/widget/image_input.dart';
+import 'package:provider/provider.dart';
 
 class AddPlacesScreen extends StatefulWidget {
   static const routeName = 'Add-Places-Screen';
@@ -23,6 +25,8 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
     if (_titleController.text.isEmpty || _pickedImage == null) {
       return;
     }
+    Provider.of<GreatPlaces>(context, listen: false).addPlace(_titleController.text, _pickedImage!);
+    Navigator.of(context).pop();
   }
 
   @override
@@ -61,7 +65,7 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.zero))
                 ),
                 icon: const Icon(Icons.add),
-                onPressed: () {}, 
+                onPressed: _savePlaces, 
                 label: const Text('Add Places')
               )
             ],
