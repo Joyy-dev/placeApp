@@ -23,6 +23,7 @@ class _LocationInputState extends State<LocationInput> {
           : Image.network(_previewImageUrl!, fit: BoxFit.cover,),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton.icon(
               style: TextButton.styleFrom(
