@@ -27,6 +27,9 @@ class GreatPlaces with ChangeNotifier {
       'id': newPlace.id,
       'title': newPlace.title,
       'image': newPlace.image.path,
+      'loc_lat': newPlace.location?.latitude ?? 0.0,
+      'loc_lng': newPlace.location?.longitude ?? 0.0,
+      'address': newPlace.location?.address ?? 0.0
     });
   }
 
@@ -35,8 +38,12 @@ class GreatPlaces with ChangeNotifier {
     _places = dataList.map((places) => Places(
       id: places['id'], 
       title: places['title'], 
-      location: null, 
       image: File(places['image']),
+      location: PlaceLocation(
+        latitude: places['loc_lat'], 
+        longitude: places['loc_lat'],
+        address: places['address']
+      )
     )).toList();
   }
 }

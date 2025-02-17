@@ -39,6 +39,7 @@ class PlacesListScreen extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 return ListTile(
                   title: Text(greatPlaces.places[index].title),
+                  subtitle: Text(greatPlaces.places[index].location?.address ?? 'No address available'),
                   leading: CircleAvatar(
                     backgroundImage: FileImage(greatPlaces.places[index].image),
                   ),
