@@ -8,7 +8,7 @@ import 'package:placeapp/widget/location_input.dart';
 import 'package:provider/provider.dart';
 
 class AddPlacesScreen extends StatefulWidget {
-  static const routeName = 'Add-Places-Screen';
+  static const routeName = '/Add-Places-Screen';
   const AddPlacesScreen({super.key});
 
   @override
